@@ -1,6 +1,8 @@
 #include "ft_printf.h"
-
+#include <stdio.h>
 int main()
 {
-	ft_printf("\n%s  %c  %d \n","asdasdasd",'a',5);
+	ft_printf("%x\n",17);
+	printf("%X\n",17);
+
 }

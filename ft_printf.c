@@ -35,6 +35,14 @@ int	ft_choice(va_list ag,const char c)
 		j += ft_putstr(va_arg((ag), char *));
 	else if (c == 'i' || c == 'd')
 		j += ft_putnbr(va_arg(ag, int));
+	else if (c == 'u')
+		j += ft_put_u(va_arg((ag), unsigned long));
+	else if (c == '%')
+		j += ft_putchar('%');
+	else if (c == 'x')
+		j += ft_put_x(va_arg(ag, unsigned int));
+	else if (c == 'X')
+		j += ft_put_x_upper(va_arg(ag, unsigned int));
 	return (j);
 }
 
