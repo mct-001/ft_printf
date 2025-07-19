@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   functions.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mutopal <mutopal@student.42istanbul.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/17 22:58:53 by mutopal           #+#    #+#             */
+/*   Updated: 2025/07/19 13:45:50 by mutopal          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static int	ft_len(long n)
@@ -20,7 +32,11 @@ int	ft_putnbr(int n)
 	int	i;
 
 	i = n;
-
+	if (n == -2147483648)
+	{
+		write (1, "-2147483648", 11);
+		return (11);
+	}
 	if (i < 0)
 	{
 		ft_putchar('-');
@@ -36,7 +52,7 @@ int	ft_putnbr(int n)
 	return (ft_len(n));
 }
 
-int	ft_put_u(unsigned long n)
+int	ft_put_u(unsigned int n)
 {
 	int	i;
 
@@ -72,5 +88,3 @@ int	ft_put_x_upper(unsigned int n)
 	len += ft_putchar(hex[n % 16]);
 	return (len);
 }
-
-
